@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+system:
+  setup:
+    roles: ROLE_SUPERADMIN, ROLE_STUDENT
+    users: superadmin
+
+security:
+  secret:
+    salt: 13127B332A45B4C86F69618A3497813127B332A45B4C86F69618A3497813127B332A45B4C86F69618A3497813127B332A45B4C86F69618A34978
+  token:
+    expires: 60000
+
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/students-management
+      database: students-management

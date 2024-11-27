@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+public:
+  urls: /students/create,/auth/login
+
+system:
+  setup:
+    roles: ROLE_SUPERADMIN, ROLE_STUDENT
+    users: superadmin
+
+security:
+  secret:
+    salt: 13127B332A45B4C86F69618A3497813127B332A45B4C86F69618A3497813127B332A45B4C86F69618A3497813127B332A45B4C86F69618A34978
+  token:
+    expires: 60000
+
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ready-to-rent
+      #uri: mongodb://mongodb:27017/ready-to-rent-docker
+      #uri: mongodb+srv://softforgedata:WCxsTCK4FJ4qyi2V@sfd-cluster.jso2ygf.mongodb.net/?retryWrites=true&w=majority
+      database: ready-to-rent
